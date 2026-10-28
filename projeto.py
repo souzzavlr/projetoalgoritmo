@@ -19,4 +19,4 @@ if opcao == '1':
         print('Este CPF já está cadastrado.')
 
     else:
-        projeto
+        projetoalgoritmo
