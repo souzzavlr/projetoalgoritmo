@@ -1,22 +1,47 @@
-nomes_pacientes = []
-cpf_pacientes = []
-telefones_pacientes = []
+#lista
+pacientes = []
+dentistas = []
+consultorios = []
+consultas = []
 
-while opcao != 0
-print('/n--- CLÍNICA ODONTOLÓGICA ---')
-print('1 - Cadastrar Paciente')
-print('2 - Listar Paciente')
-print('0 - Sair')
+#login admin
+admins = [['ajato', '1234'], ['yohane', '4321']]
 
-opcao = input('escolha uma opção:')
 
-if opcao == '1':
-    nome = input('Digite o nome do paciente: ')
-    cpf = input('Digite o CPF:')
-    telefone = input('Digite o telefone:')
+while True:
+    print('========== CLINICA ODONTOLOGICA ==========')
+    print('ENTRAR COMO:')
+    print('1 - ADMINISTRADOR')
+    print('2 - PACIENTE')
+    print('0 - SAIR')
+    opcao = input('Digite a opção desejada: ')
+    if opcao == '0':
+        break
+    elif opcao == '1':
+        logado = False
+        while True:
+            print('========== LOGIN ADMINISTRADOR ==========')
+            print()
+            print('Digite 0 para voltar a tela inicial.')
+            print()
+            login = input ('Digite o login: ')
+            if login == '0':
+                break
+            senha = input ('Digite a senha: ')
+            for a in admins:
+                if login == a[0] and senha == a[1]:
+                    logado = True
+                    break
 
-    if cpf in cpf_pacientes:
-        print('Este CPF já está cadastrado.')
+            if logado:
+                print('Login realizado com sucesso!')
+                print()
+                while True:
+                    print('========== MENU ADMINISTRADOR ==========')
+                    print()
+                    print(f'Bem-vindo(a) ao sistema, administrador(a): {login}')
+                    break
+            else:
+                    print('Login ou senha incorretos. Tente novamente.')
 
-    else:
-        projetoalgoritmo
+                
